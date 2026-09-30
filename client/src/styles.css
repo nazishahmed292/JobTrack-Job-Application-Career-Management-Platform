@@ -1,0 +1,296 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --panel-soft: #fafbfc;
+  --panel-strong: #f0f2f5;
+  --border: #e5e7eb;
+  --text: #20252d;
+  --muted: #717985;
+  --primary: #4558c9;
+  --primary-hover: #3547b4;
+  --primary-soft: #eef0ff;
+  --success: #198754;
+  --warning: #a56808;
+  --danger: #c44646;
+  --shadow: 0 12px 32px rgba(24, 32, 48, 0.055);
+  --sidebar: #20232b;
+  --sidebar-muted: #a6aab5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'DM Sans', 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button, a, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+  outline: 3px solid rgba(69, 88, 201, 0.3);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(148, 163, 184, 0.8);
+  border-radius: 9999px;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: var(--shadow);
+}
+
+.input,
+.select,
+.textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 0.68rem 0.8rem;
+  background: var(--panel);
+  color: var(--text);
+  transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+  outline: none;
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(69, 88, 201, 0.12);
+}
+
+.button-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.55rem;
+  border: 1px solid var(--primary);
+  border-radius: 7px;
+  background: var(--primary);
+  color: white;
+  padding: 0.68rem 0.95rem;
+  font-weight: 650;
+  transition: background 0.16s ease, transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.button-primary:hover {
+  background: var(--primary-hover);
+  box-shadow: 0 5px 14px rgba(69, 88, 201, 0.2);
+  transform: translateY(-1px);
+}
+
+.button-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  background: var(--panel);
+  color: var(--text);
+  padding: 0.65rem 0.85rem;
+  font-weight: 600;
+  transition: background 0.16s ease, border-color 0.16s ease;
+}
+
+.button-secondary:hover {
+  background: var(--panel-strong);
+  border-color: #c9ced6;
+}
+
+.page-heading {
+  margin-bottom: 1.6rem;
+}
+
+.page-heading h1 {
+  margin: 0.25rem 0 0;
+  color: var(--text);
+  font-size: 1.65rem;
+  line-height: 1.2;
+  font-weight: 720;
+  letter-spacing: 0;
+}
+
+.page-heading p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.section-heading {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 680;
+}
+
+.sidebar {
+  background: var(--sidebar);
+  color: #f4f5f7;
+}
+
+.sidebar-link {
+  color: var(--sidebar-muted);
+  transition: color 0.16s ease, background 0.16s ease;
+}
+
+.sidebar-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.sidebar-link.active {
+  color: #fff;
+  background: rgba(112, 128, 241, 0.2);
+  box-shadow: inset 2px 0 #8996ff;
+}
+
+.topbar {
+  background: color-mix(in srgb, var(--panel) 92%, transparent);
+  border-color: var(--border);
+  backdrop-filter: blur(14px);
+}
+
+.page-wrap {
+  width: 100%;
+  max-width: 1640px;
+  margin: 0 auto;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #17191e;
+  --panel: #202329;
+  --panel-soft: #252830;
+  --panel-strong: #2a2e37;
+  --border: #363a44;
+  --text: #eceef2;
+  --muted: #a2a7b2;
+  --primary: #8995ff;
+  --primary-hover: #7482f3;
+  --primary-soft: #2b304a;
+  --success: #56bd86;
+  --warning: #e5b34e;
+  --danger: #ed7777;
+  --shadow: 0 12px 32px rgba(0, 0, 0, 0.14);
+  --sidebar: #13151a;
+  --sidebar-muted: #a6aab5;
+}
+
+.dark body,
+body:has(.dark) {
+  background: var(--bg);
+  color: var(--text);
+}
+
+.dark .bg-white { background-color: var(--panel) !important; }
+.dark .bg-slate-50,
+.dark .bg-slate-100 { background-color: var(--panel-soft) !important; }
+.dark .bg-blue-50 { background-color: #292f4a !important; }
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-slate-700 { color: var(--text) !important; }
+.dark .text-slate-600,
+.dark .text-slate-500,
+.dark .text-slate-400 { color: var(--muted) !important; }
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-slate-300 { border-color: var(--border) !important; }
+.dark .status-wishlist { background: #343943; color: #c3c8d1; }
+.dark .status-applied { background: #29324b; color: #aabaff; }
+.dark .status-screening { background: #45391e; color: #f0ca75; }
+.dark .status-interview { background: #432d3d; color: #f0a8cf; }
+.dark .status-offer { background: #263d32; color: #8ed6aa; }
+.dark .status-rejected { background: #452d31; color: #f0a0a0; }
+.dark .status-withdrawn { background: #343943; color: #c3c8d1; }
+.dark .input,
+.dark .select,
+.dark .textarea { background: var(--panel); color: var(--text); }
+.dark .sidebar { background: var(--sidebar); }
+
+.skeleton {
+  background: linear-gradient(90deg, var(--panel-strong), var(--panel-soft), var(--panel-strong));
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+  to { background-position: -200% 0; }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 5px;
+  padding: 0.3rem 0.55rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.status-wishlist { background: #e2e8f0; color: #334155; }
+.status-applied { background: #dbeafe; color: #1d4ed8; }
+.status-screening { background: #fef3c7; color: #92400e; }
+.status-interview { background: #fce7f3; color: #9d174d; }
+.status-offer { background: #dcfce7; color: #166534; }
+.status-rejected { background: #fee2e2; color: #b91c1c; }
+.status-withdrawn { background: #f3f4f6; color: #4b5563; }
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+.fade-in {
+  animation: fadeIn 0.24s ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

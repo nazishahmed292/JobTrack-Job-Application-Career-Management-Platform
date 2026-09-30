@@ -1,0 +1,1 @@
+import{j as t}from"./index-D1vRExlq.js";const e={Wishlist:"status-wishlist",Applied:"status-applied",Screening:"status-screening",Interview:"status-interview",Offer:"status-offer",Rejected:"status-rejected",Withdrawn:"status-withdrawn"},i=({status:s})=>t.jsx("span",{className:`badge ${e[s]||"status-applied"}`,children:s});export{i as S};
