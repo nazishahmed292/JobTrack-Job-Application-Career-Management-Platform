@@ -69,10 +69,7 @@ JobTrack/
 ├── .gitignore
 └── .env.example
 ```
-
-## Screenshots
-
-Add screenshots here when you have product images.
+
 
 ## Installation
 
